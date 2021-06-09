@@ -1,4 +1,5 @@
 ﻿using Movement;
+using Shooting;
 using UnityEngine;
 
 namespace Controllers
@@ -10,10 +11,13 @@ namespace Controllers
         [SerializeField]
         private MoveLogic moveLogic;
 
+        [SerializeField] private ShootingLogic shootingLogic;
+
         private void Awake()
         {
             _playerActionControl = new PlayerActionControl();
             _playerActionControl.Player.Jump.performed += context => moveLogic.Jump();
+            _playerActionControl.Player.Shoot.performed += context => shootingLogic.Shoot();
         }
 
         private void OnEnable()
