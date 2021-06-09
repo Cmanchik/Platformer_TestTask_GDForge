@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Controllers
 {
-    public class FirstPlayerController : MonoBehaviour
+    public class SecondPlayerController : MonoBehaviour
     {
         private PlayerActionControl _playerActionControl;
         
@@ -13,7 +13,7 @@ namespace Controllers
         private void Awake()
         {
             _playerActionControl = new PlayerActionControl();
-            _playerActionControl.Player.Jump.performed += context => moveLogic.Jump();
+            _playerActionControl.Player1.Jump.performed += context => moveLogic.Jump();
         }
 
         private void OnEnable()
@@ -23,7 +23,7 @@ namespace Controllers
 
         private void FixedUpdate()
         {
-            float direction =  _playerActionControl.Player.Move.ReadValue<float>();
+            float direction =  _playerActionControl.Player1.Move.ReadValue<float>();
             moveLogic.Move(direction);
         }
     }
