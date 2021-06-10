@@ -9,6 +9,7 @@ namespace Shooting
 
         public void Shoot()
         {
+            if (!this) return;
             Instantiate(bulletPrefab, gunPoint.position, transform.rotation);
         }
     }

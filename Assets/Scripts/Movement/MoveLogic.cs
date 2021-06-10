@@ -66,7 +66,7 @@ namespace Movement
         /// </summary>
         public void Jump()
         {
-            if (_jumpCurrent <= 0) return;
+            if (_jumpCurrent <= 0 || _rb == null) return;
             
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
             _jumpCurrent--;

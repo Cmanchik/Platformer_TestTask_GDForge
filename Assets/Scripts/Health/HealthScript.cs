@@ -1,17 +1,14 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace Health
 {
     public class HealthScript : MonoBehaviour
     {
         [SerializeField] private UnityEvent deathEvent;
-
-        private void Start()
-        {
-            deathEvent.AddListener(Death);
-        }
+        public UnityEvent DeathEvent => deathEvent;
 
         private void OnCollisionEnter2D(Collision2D other)
         {
@@ -21,7 +18,7 @@ namespace Health
             }
         }
 
-        private void Death()
+        public void Death()
         {
             Destroy(gameObject);
         }

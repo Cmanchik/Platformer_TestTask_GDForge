@@ -1,4 +1,5 @@
-﻿using Movement;
+﻿using System;
+using Movement;
 using Shooting;
 using UnityEngine;
 
@@ -16,6 +17,10 @@ namespace Controllers
         private void Awake()
         {
             _playerActionControl = new PlayerActionControl();
+        }
+
+        private void Start()
+        {
             _playerActionControl.Player.Jump.performed += context => moveLogic.Jump();
             _playerActionControl.Player.Shoot.performed += context => shootingLogic.Shoot();
         }
