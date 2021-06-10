@@ -577,8 +577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc98dd04959964c4ca4a489a531fbc40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 0}
-  losePanel: {fileID: 0}
+  mainMenu: {fileID: 419618658}
+  losePanel: {fileID: 33298456}
 --- !u!4 &116213495
 Transform:
   m_ObjectHideFlags: 0
@@ -722,12 +722,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137619853}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.13, y: -1.45, z: 0}
   m_LocalScale: {x: 4.6838913, y: 4.6838913, z: 4.6838913}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1478788739}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &152006598
 GameObject:
@@ -2045,7 +2045,7 @@ Transform:
   - {fileID: 1873572970}
   - {fileID: 1557485709}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &582734112
 GameObject:
@@ -3090,8 +3090,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlayerHealth: {fileID: 1779142681}
   secondPlayerHealth: {fileID: 1821627307}
-  startPosFirstPlayer: {fileID: 0}
-  startPosSecondPlayer: {fileID: 0}
+  startPosFirstPlayer: {fileID: 1127619286}
+  startPosSecondPlayer: {fileID: 984163957}
   totem: {fileID: 721721798}
 --- !u!1 &873378853
 GameObject:
@@ -3480,9 +3480,9 @@ GameObject:
   m_Component:
   - component: {fileID: 984163957}
   m_Layer: 0
-  m_Name: startPosFirstPlayer (1)
+  m_Name: startPosSecondPlayer
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3494,7 +3494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984163956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.5801687, y: -1.2314413, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1478788739}
@@ -3901,7 +3901,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1105172934
 GameObject:
@@ -3996,7 +3996,7 @@ GameObject:
   m_Layer: 0
   m_Name: startPosFirstPlayer
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4008,7 +4008,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127619285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.45, y: -1.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1478788739}
@@ -4601,6 +4601,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 842209362}
+        m_MethodName: ResetWorld
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1215373147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5068,6 +5079,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 842209362}
         m_MethodName: ResetWorld
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 842209362}
+        m_MethodName: ResumeNormalTime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5558,8 +5580,9 @@ Transform:
   m_Children:
   - {fileID: 1127619286}
   - {fileID: 984163957}
+  - {fileID: 137619857}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484661697
 GameObject:
@@ -6200,7 +6223,7 @@ Transform:
   - {fileID: 116213495}
   - {fileID: 2120522120}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1708158236
 GameObject:
@@ -7138,7 +7161,7 @@ RectTransform:
   - {fileID: 626115595}
   - {fileID: 33298456}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

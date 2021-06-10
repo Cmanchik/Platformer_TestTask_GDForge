@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4165606861249325921}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GunPoint
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -354,7 +354,7 @@ MonoBehaviour:
     m_ActionId: f3c14574-36da-4ad6-afde-40a933652c7a
     m_ActionName: Player1/Jump[/Keyboard/upArrow]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

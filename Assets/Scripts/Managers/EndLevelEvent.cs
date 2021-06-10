@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace Managers
@@ -11,13 +10,13 @@ namespace Managers
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            _numPlayers++;
+            if (other.gameObject.layer == LayerMask.NameToLayer("Player")) _numPlayers++;
             if (_numPlayers == 2) endLevel.Invoke();
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            _numPlayers--;
+            if (other.gameObject.layer == LayerMask.NameToLayer("Player")) _numPlayers--;
         }
     }
 }
