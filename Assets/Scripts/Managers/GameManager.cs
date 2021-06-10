@@ -1,5 +1,6 @@
 ﻿using System;
 using Health;
+using Shooting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,20 +12,59 @@ namespace Managers
         [SerializeField] private HealthScript firstPlayerHealth;
         [SerializeField] private HealthScript secondPlayerHealth;
 
-        private void Start()
+        [Header("Reset")] 
+        [SerializeField] private Transform startPosFirstPlayer;
+        [SerializeField] private Transform startPosSecondPlayer;
+        
+        [Space] 
+        
+        [SerializeField] private GameObject totem;
+
+        private void Awake()
         {
-            firstPlayerHealth.DeathEvent.AddListener(DeathPlayer);
-            secondPlayerHealth.DeathEvent.AddListener(DeathPlayer);
+            Time.timeScale = 0;
         }
 
-        private void DeathPlayer()
+        private void Start()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            firstPlayerHealth.DeathEvent.AddListener(Lose);
+            secondPlayerHealth.DeathEvent.AddListener(Lose);
+        }
+
+        private void Lose()
+        {
+            Time.timeScale = 0;
+            UIManager.Instance.OpenLosePanel();
         }
 
         public void Win()
         {
-            Debug.Log("Win!");
+            Time.timeScale = 0;
+            UIManager.Instance.OpenMainMenu();
+        }
+
+        public void EndGame()
+        {
+            Application.Quit();
+        }
+
+        public void ResumeNormalTime()
+        {
+            Time.timeScale = 1;
+        }
+
+        public void ResetWorld()
+        {
+            BulletScript[] bullets = FindObjectsOfType<BulletScript>();
+            foreach (BulletScript bullet in bullets)
+            {
+                Destroy(bullet.gameObject);
+            }
+
+            if (!totem.activeInHierarchy) totem.SetActive(true);
+
+            firstPlayerHealth.transform.position = startPosFirstPlayer.position;
+            secondPlayerHealth.transform.position = startPosSecondPlayer.position;
         }
     }
 }

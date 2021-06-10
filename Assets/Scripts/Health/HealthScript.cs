@@ -20,7 +20,7 @@ namespace Health
 
         public void Death()
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
