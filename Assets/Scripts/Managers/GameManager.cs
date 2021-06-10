@@ -7,6 +7,7 @@ namespace Managers
 {
     public class GameManager : Singleton<GameManager>
     {
+        [Header("GamePlay")]
         [SerializeField] private HealthScript firstPlayerHealth;
         [SerializeField] private HealthScript secondPlayerHealth;
 

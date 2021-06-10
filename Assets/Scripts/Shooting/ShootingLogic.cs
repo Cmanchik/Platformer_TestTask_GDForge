@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Shooting
 {
@@ -7,9 +8,9 @@ namespace Shooting
         [SerializeField] private GameObject bulletPrefab;
         [SerializeField] private Transform gunPoint;
 
-        public void Shoot()
+        public void Shoot(InputAction.CallbackContext ctx)
         {
-            if (!this) return;
+            if (!ctx.performed) return;
             Instantiate(bulletPrefab, gunPoint.position, transform.rotation);
         }
     }

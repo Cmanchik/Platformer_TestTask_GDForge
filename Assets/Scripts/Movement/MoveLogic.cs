@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Movement
 {
@@ -43,6 +44,8 @@ namespace Movement
         [SerializeField]
         protected float heightCheckGround;
 
+        private float _axisHorizontal = 0;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -52,21 +55,26 @@ namespace Movement
         /// <summary>
         /// Перемещение
         /// </summary>
-        /// <param name="axisHorizontal">Направление по оси X</param>
-        public void Move(float axisHorizontal)
+        /// <param name="ctx"></param>
+        public void MoveRead(InputAction.CallbackContext ctx)
         {
-            _rb.velocity = new Vector2(axisHorizontal * speed, _rb.velocity.y);
+            _axisHorizontal = ctx.ReadValue<float>();
+        }
 
-            if (axisHorizontal > 0) transform.rotation = Quaternion.Euler(new Vector2(0, 0));
-            else if (axisHorizontal < 0) transform.rotation = Quaternion.Euler(new Vector2(0, 180));
+        public void FixedUpdate()
+        {
+            _rb.velocity = new Vector2(_axisHorizontal * speed, _rb.velocity.y);
+
+            if (_axisHorizontal > 0) transform.rotation = Quaternion.Euler(new Vector2(0, 0));
+            else if (_axisHorizontal < 0) transform.rotation = Quaternion.Euler(new Vector2(0, 180));
         }
 
         /// <summary>
         /// Прыжок
         /// </summary>
-        public void Jump()
+        public void Jump(InputAction.CallbackContext ctx)
         {
-            if (_jumpCurrent <= 0 || _rb == null) return;
+            if (_jumpCurrent <= 0 || _rb == null || !ctx.performed) return;
             
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
             _jumpCurrent--;

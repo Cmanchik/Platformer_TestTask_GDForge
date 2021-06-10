@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4165606861361537414}
   - component: {fileID: 4165606861361537415}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: JumpPoint
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -100,9 +100,9 @@ GameObject:
   - component: {fileID: 4165606862041101881}
   - component: {fileID: 4165606862041101880}
   - component: {fileID: 4165606862041101883}
-  - component: {fileID: 4165606862041101882}
   - component: {fileID: 4165606862041100741}
   - component: {fileID: 8986032334669090024}
+  - component: {fileID: 825314882}
   m_Layer: 9
   m_Name: FirstPlayer
   m_TagString: Untagged
@@ -244,20 +244,6 @@ MonoBehaviour:
     m_Bits: 256
   widthCheckGround: 1.37
   heightCheckGround: 0.26
---- !u!114 &4165606862041101882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4165606862041100740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4fad5d4e198ff44b0b5d79ded8aa37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveLogic: {fileID: 4165606862041101883}
-  shootingLogic: {fileID: 4165606862041100741}
 --- !u!114 &4165606862041100741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,3 +274,87 @@ MonoBehaviour:
   deathEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &825314882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165606862041100740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: e16ad128d4752464082ccbc2ff18dfe4,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4165606862041101883}
+        m_MethodName: MoveRead
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: de84f59b-790f-4257-a50e-455eefe586cc
+    m_ActionName: Player/Move[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4165606862041100741}
+        m_MethodName: Shoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7f2943da-8e38-4395-a705-e7b0ae973280
+    m_ActionName: Player/Shoot[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4165606862041101883}
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b899f3b2-56f6-41d7-af40-98ebad181d26
+    m_ActionName: Player/Jump[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 43a193fd-7fa5-4db3-8675-443bda86b5fb
+    m_ActionName: Player1/Move[/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f3c14574-36da-4ad6-afde-40a933652c7a
+    m_ActionName: Player1/Jump[/Keyboard/upArrow]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
