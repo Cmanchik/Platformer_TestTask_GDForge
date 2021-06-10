@@ -7,7 +7,6 @@ namespace Health
     public class HealthScript : MonoBehaviour
     {
         [SerializeField] private UnityEvent deathEvent;
-        [SerializeField] private LayerMask deathLayer;
 
         private void Start()
         {
@@ -16,7 +15,7 @@ namespace Health
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.layer == deathLayer)
+            if (other.gameObject.layer == LayerMask.NameToLayer("DeathObject"))
             {
                 deathEvent.Invoke();
             }
